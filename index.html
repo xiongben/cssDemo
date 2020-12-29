@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pretty Girl</title><base target="_blank" />
+    <!-- <link rel="stylesheet" href="https://hovertree.com/texiao/css3/34/hovertree.css" /> -->
+    <style>
+        .foottext{
+            text-align: center;
+        }
+        html{
+	background:linear-gradient(#ff0 0%,#000 80%);
+    height: 100%;
+    color:red;
+}
+/*最外层容器样式*/
+.wrap{
+	width: 200px;
+	height: 200px;
+	/*改变左右上下,图片方块移动*/
+	margin: 150px auto;
+	position: relative;
+	
+}
+/*包裹所有容器样式*/
+.cube{
+	width: 200px;
+	height: 200px;
+	margin: 0 auto;
+	transform-style: preserve-3d;
+	transform: rotateX(-30deg) rotateY(-80deg);
+	-webkit-animation: rotate 15s infinite;
+	/*匀速*/
+	animation-timing-function: linear;
+}
+@-webkit-keyframes rotate{
+	from{transform: rotateX(0deg) rotateY(0deg);}
+	to{transform: rotateX(360deg) rotateY(360deg);}
+}
+.cube div{
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	opacity: 0.92;
+	transition: all .4s;
+    background: #fff;
+}
+/*定义所有图片样式*/
+.pic{
+	width: 200px;
+	height: 200px;
+}
+.cube .out_front{
+	transform: rotateY(0deg) translateZ(100px);
+}
+.cube .out_back{
+	transform: translateZ(-100px) rotateY(180deg);
+}
+.cube .out_left{
+	transform: rotateY(90deg) translateZ(100px);
+}
+.cube .out_right{
+	transform: rotateY(-90deg) translateZ(100px);
+}
+.cube .out_top{
+	transform: rotateX(90deg) translateZ(100px);
+}
+.cube .out_bottom{
+	transform: rotateX(-90deg) translateZ(100px);
+}
+/*定义小正方体样式
+    by 何问起
+*/
+.cube span{
+	display: bloack;
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	top: 50px;
+	left: 50px;
+}
+.cube .in_pic{
+	width: 100px;
+	height: 100px;
+}
+.cube .in_front{
+	transform: rotateY(0deg) translateZ(50px);
+}
+.cube .in_back{
+	transform: translateZ(-50px) rotateY(180deg);
+}
+.cube .in_left{
+	transform: rotateY(90deg) translateZ(50px);
+}
+.cube .in_right{
+	transform: rotateY(-90deg) translateZ(50px);
+}
+.cube .in_top{
+	transform: rotateX(90deg) translateZ(50px);
+}
+.cube .in_bottom{
+	transform: rotateX(-90deg) translateZ(50px);
+}
+/*鼠标移入后样式*/
+.cube:hover .out_front{
+	transform: rotateY(0deg) translateZ(200px);
+}
+.cube:hover .out_back{
+	transform: translateZ(-200px) rotateY(180deg);
+}
+.cube:hover .out_left{
+	transform: rotateY(90deg) translateZ(200px);
+}
+.cube:hover .out_right{
+	transform: rotateY(-90deg) translateZ(200px);
+}
+.cube:hover .out_top{
+	transform: rotateX(90deg) translateZ(200px);
+}
+.cube:hover .out_bottom{
+	transform: rotateX(-90deg) translateZ(200px);
+}
+.hovertreeinfo{text-align:center;}
+.hovertreeinfo a{color:white}
+.test1{
+    font-size: 14px;
+    color: #fff;
+}
+    </style>
+</head>
+<body>
+    <div class="hovertreeinfo">
+    <h2>蒹葭苍苍，浅画眉妆</h2><span class="test1">请把光标移到立方体上面，或者点击图片。</span><input type="button" value="还原" /></div>
+    <!--/*外层最大容器*/-->
+    <div class="wrap">
+        <!--	/*包裹所有元素的容器*/-->
+        <div class="cube">
+            <!--前面图片 -->
+            <div class="out_front">
+                <img src="./img/p8.jpeg" class="pic" />
+            </div>
+            <!--后面图片 -->
+            <div class="out_back">
+                <img src="./img/p7.jpeg" class="pic" />
+            </div>
+            <!--左图片 -->
+            <div class="out_left">
+                <img src="./img/p6.jpeg" class="pic" />
+            </div>
+            <div class="out_right">
+                <img src="./img/p9.jpeg" class="pic" />
+            </div>
+            <div class="out_top">
+                <img src="./img/p3.jpeg" class="pic" />
+            </div>
+            <div class="out_bottom">
+                <img src="./img/p1.jpeg" class="pic" />
+            </div>
+            <!--小正方体 -->
+            <span class="in_front">
+                <img src="./img/p2.jpeg" class="in_pic" />
+            </span>
+            <span class="in_back">
+                <img src="./img/p4.jpeg" class="in_pic" />
+            </span>
+            <span class="in_left">
+                <img src="./img/p5.jpeg" class="in_pic" />
+            </span>
+            <span class="in_right">
+                <img src="./img/p10.jpeg" class="in_pic" />
+            </span>
+            <span class="in_top">
+                <img src="./img/p1.jpeg" class="in_pic" />
+            </span>
+            <span class="in_bottom">
+                <img src="./img/p3.jpeg" class="in_pic" />
+            </span>
+        </div>
+    </div>
+    <p class="foottext">伊人窈窕，寤寐思之费思量，后来，一寸相思，化作十万秋水长</p>
+    <!-- <iframe frameborder="no"  marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id=1447679435&auto=1&height=32"></iframe> -->
+    <!-- <embed src="//music.163.com/style/swf/widget.swf?sid=1447679435&type=2&auto=1&width=278&height=32" width="298" height="52"  allowNetworking="all"></embed> -->
+    <audio src="./img/bg.mp3" loop autoplay="true" controls></audio>
+    <!-- <iframe src = "./img/bg.mp3" allow = "autoplay" hidden></iframe> -->
+</body>
+</html>
